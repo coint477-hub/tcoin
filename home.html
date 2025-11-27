@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+    margin:0;
+    background: linear-gradient(red, green, pink);
+    font-family: Arial;
+    text-align:center;
+}
+
+.marquee{
+    font-size:22px;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+.box{
+    background:white;
+    width:80%;
+    margin:15px auto;
+    padding:15px;
+    border-radius:10px;
+}
+
+.coin{
+    color:blue;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.menu{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background: linear-gradient(red, green, pink);
+    padding:10px 0;
+    display:flex;
+    justify-content:space-around;
+}
+
+.menu button{
+    padding:10px;
+    width:20%;
+    border:none;
+    border-radius:5px;
+    background:white;
+}
+</style>
+
+<script>
+window.onload = () => {
+    if(localStorage.getItem("logged") !== "yes"){
+        alert("Please Login First");
+        window.location.href="login.html";
+    }
+
+    let coin = localStorage.getItem("coins");
+    if(!coin){
+        coin = 0;
+        localStorage.setItem("coins", 0);
+    }
+
+    document.getElementById("coinbox").innerText = coin;
+}
+</script>
+</head>
+
+<body>
+
+<marquee class="marquee">Welcome to T Coin Best Cryptocurrency</marquee>
+
+<div class="box">
+    <h3>Your T Coins:</h3>
+    <div class="coin" id="coinbox">0</div>
+</div>
+
+<div class="box">
+    <h3>About T Coin</h3>
+    <p>
+      T Coin will be officially launched once it reaches the milestone of 1 million subscribers. This target not only reflects its growing popularity but also shows the strong trust of its community. With such massive support, the launch of T Coin is expected to be even more impactful and successful
+    </p>
+</div>
+
+<div class="box">
+    <h3>WhatsApp Contact</h3>
+    <p>no. 8889836833</p>
+    <p>phonepe no.8889836833
+    </p>
+</div>
+<br>
+    
+<div class="menu">
+    <button>Home</button>
+    <button>Wallet</button>
+    <button>History</button>
+    <button>Profile</button>
+</div>
+
+</body>
+</html>
